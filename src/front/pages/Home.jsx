@@ -5,10 +5,11 @@ import useGlobalReducer from "../hooks/useGlobalReducer.jsx";
 export const Home = () => {
 
 	const { store, dispatch } = useGlobalReducer()
-
+	const backendUrl = import.meta.env.VITE_BACKEND_URL
+	
 	const loadMessage = async () => {
 		try {
-			const backendUrl = import.meta.env.VITE_BACKEND_URL
+			
 
 			if (!backendUrl) throw new Error("VITE_BACKEND_URL is not defined in .env file")
 
@@ -34,19 +35,7 @@ export const Home = () => {
 
 	return (
 		<div className="text-center mt-5">
-			<h1 className="display-4">Hello Rigo!!</h1>
-			<p className="lead">
-				<img src={rigoImageUrl} className="img-fluid rounded-circle mb-3" alt="Rigo Baby" />
-			</p>
-			<div className="alert alert-info">
-				{store.message ? (
-					<span>{store.message}</span>
-				) : (
-					<span className="text-danger">
-						Loading message from the backend (make sure your python 🐍 backend is running)...
-					</span>
-				)}
-			</div>
+			hello
 		</div>
 	);
 }; 
