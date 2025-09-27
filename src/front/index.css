@@ -1,0 +1,19 @@
+.background{
+    background-color: rgba(128, 128, 128, 0.321);
+    border-radius: 15px;
+    width: 60%;
+    margin: auto;
+}
+
+.email{
+    margin-top: 1rem;
+}
+
+.pass{
+    margin-top: 1rem;
+}
+
+.buttons{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}

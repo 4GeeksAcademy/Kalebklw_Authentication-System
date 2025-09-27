@@ -26,7 +26,7 @@ def user_sign_up():
     )
 
     response_body = {
-        "message": "User has been registered!",
+        "message": new_email + " has been registered!",
         "user": new_user.serialize()
     }
 

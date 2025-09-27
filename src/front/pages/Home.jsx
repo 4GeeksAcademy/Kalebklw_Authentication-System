@@ -2,16 +2,17 @@ import React, { useEffect } from "react"
 import rigoImageUrl from "../assets/img/rigo-baby.jpg";
 import useGlobalReducer from "../hooks/useGlobalReducer.jsx";
 import { SignUp } from "../components/signUp&LogIn"
+import 'bootstrap/dist/css/bootstrap.css';
 
 export const Home = () => {
 
 	const { store, dispatch } = useGlobalReducer()
 	const backendUrl = import.meta.env.VITE_BACKEND_URL
 	const token = import.meta.env.VITE_TOKEN
-	
+
 	const loadMessage = async () => {
 		try {
-			
+
 
 			if (!backendUrl) throw new Error("VITE_BACKEND_URL is not defined in .env file")
 
@@ -34,18 +35,19 @@ export const Home = () => {
 	const getUser = () => {
 		let options = {
 			method: "GET",
-			headers: {"Content-Type": "application/json",
+			headers: {
+				"Content-Type": "application/json",
 				Authorization: "Bearer " + token
 			}
 		}
 		fetch(backendUrl + "/user", options)
-		.then((resp) => resp.json())
-		.then((data) => console.log("User Data Tag!!!!!: ", data))
+			.then((resp) => resp.json())
+			.then((data) => console.log("User Data Tag!!!!!: ", data))
 	}
 
 	useEffect(() => {
 		loadMessage(),
-		getUser()
+			getUser()
 	}, [])
 
 	return (
