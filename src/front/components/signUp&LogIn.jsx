@@ -8,7 +8,6 @@ export const SignUp = () => {
     const [password, setPassword] = useState("")
     const [statusMessage, setStatusMessage] = useState("")
     const [token, setToken] = useState(null)
-    // const [userEmail, setUserEmail] =({"email": ""})
     const [user, setUser] = useState({ "email": "" })
     const backendUrl = import.meta.env.VITE_BACKEND_URL
 
@@ -40,8 +39,7 @@ export const SignUp = () => {
         fetch(backendUrl + "/sign_up", options)
             .then((resp) => resp.json())
             .then((data) =>
-                setStatusMessage(data.message), // This .message comes from the response body within the routes.py. Specifically line 28
-                // setUserEmail(data.user)    
+                setStatusMessage(data.message), // This .message comes from the response body within the routes.py. Specifically line 28    
             )
     }
 
